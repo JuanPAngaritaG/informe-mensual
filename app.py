@@ -1,7 +1,6 @@
 from flask import Flask, request, send_file, jsonify
 from generate_ppt import crear_informe
 import tempfile
-import os
 
 app = Flask(__name__)
 
@@ -28,5 +27,6 @@ def generar():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+# ❌ Render no necesita esto, pero puedes dejarlo si desarrollas localmente
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
